@@ -1,0 +1,387 @@
+.hide{
+    display:none;
+}
+
+.clear{
+    clear:both;
+}
+
+.nPlayer_playBox *{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+#nPlayer_playBox{
+    height:500px;
+    width:540px;
+    box-shadow:0px 0px 20px #999999 inset;
+    background-image:url(bg.jpg);
+    background-repeat:no-repeat;
+    background-size:auto 100%;
+    background-position:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-270px;
+    margin-top:-250px;
+    text-align:center;
+}
+
+#nPlayer_timeNum{
+    position:absolute;
+    color:#000000;
+    font-weight:bold;
+    font-size:14px;
+    top:60px;
+    left:140px;
+}
+
+#nPlayer_listContain{
+}
+
+.nPlayer_songListBack{
+    border-radius:10px;
+    box-shadow:0 0 10px #666666;
+    background-color:white;
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.7) 10%, rgba(255,255,255,0.7) 90%, rgba(255,255,255,0.4));
+    background: -moz-linear-gradient(top, rgba(255,255,255,0.4), rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.4));
+    z-index:15;
+    height:300px;
+    top:150px;
+}
+
+.nPlayer_songList,#nPlayer_playList,.nPlayer_songListBack{
+    overflow:auto;
+    text-align:left;
+    position:absolute;
+}
+
+#nPlayer_playList{
+    width:300px;
+    left:10px;
+    display:none;
+}
+
+.nPlayer_songList,.nPlayer_songListBack{
+    width:60%;
+    left:20%;
+}
+
+.nPlayer_songList{
+    height:260px;
+    top:170px;
+    z-index:20;
+}
+
+.nPlayer_songList li,#nPlayer_dragSong{
+    cursor:pointer;
+    padding:5px;
+}
+.nPlayer_songList li{
+    position:relative;
+}
+.nPlayer_songList li:hover, #nPlayer_playList li.current:hover{
+    background-color:#60FFCA;
+}
+.nPlayer_songList li.current{
+    background-color:#9EFFDE;
+}
+.nPlayer_songList li .nPlayer_btnDelsong{
+    position:absolute;
+    right:10px;
+    top:0;
+}
+#nPlayer_dragLine{
+    height:2px;
+    background-color:black;
+}
+
+.nPlayer_playControlBack{
+    background:white;
+    opacity:0.5;
+    border-radius:10px;
+}
+
+.nPlayer_playControl, .nPlayer_playControlBack{
+    width:90%;
+    height:100px;
+    margin:10px auto;
+}
+
+.nPlayer_playControl span, .nPlayer_modControl span{
+    display:block;
+    width:100%;
+    height:100%;
+    background-size:auto 80%;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.nPlayer_playControl div, .nPlayer_modControl div{
+    background-color:white;
+    background: -webkit-linear-gradient(top, #FFFFFF, #F1F1F1 50%, #E1E1E1 50%, #F3F3F3);
+    background: -moz-linear-gradient(top, #FFFFFF, #F1F1F1 50%, #E1E1E1 50%, #F3F3F3);
+    position:absolute;
+    cursor:pointer;
+    box-shadow:0 0 10px #666666 inset;
+}
+
+.nPlayer_playControl div:hover{
+    box-shadow:0 0 10px #666666 inset;
+    background: -webkit-linear-gradient(top, #E1E1E1, #F3F3F3);
+    background: -moz-linear-gradient(top, #E1E1E1, #F3F3F3);
+}
+
+.nPlayer_modControl div:hover{
+    background: -webkit-linear-gradient(top, #E1E1E1, #F3F3F3);
+    background: -moz-linear-gradient(top, #E1E1E1, #F3F3F3);
+}
+
+.nPlayer_play{
+    top:30px;
+    left:50px;
+    border-radius:50px;
+    width:60px;
+    height:60px;
+}
+
+.nPlayer_sound{
+    top:60px;
+    right:70px;
+    width:40px;
+    height:40px;
+    border-radius:15px;
+}
+
+.nPlayer_modControl{
+    box-shadow:0 0 15px #666666;
+    position:absolute;
+    border-radius:5px;
+    top:72px;
+    right:120px;
+}
+
+.nPlayer_modControl div{
+    position:static;
+    width:40px;
+    height:20px;
+    float:left;
+    box-shadow:0 0 0;
+}
+
+.nPlayer_modControl div span{
+    font-size:13px;
+    font-weight:bold;
+    line-height:20px;
+}
+
+.nPlayer_normal{
+    border-radius:5px 0 0 5px;
+}
+
+.nPlayer_loopAll{
+    border-radius:0 5px 5px 0;
+}
+
+.nPlayer_loopOne{
+    border-left:1px solid #999999;
+    border-right:1px solid #999999;
+}
+
+.nPlayer_modControl .nPlayer_modSelect{
+    background: -webkit-linear-gradient(top, #CCCCCC, #F3F3F3);
+    background: -moz-linear-gradient(top, #CCCCCC, #F3F3F3);
+}
+
+.nPlayer_icon_pause{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAqCAYAAADI3bkcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAcZJREFUeNrsmEtqwzAQhmU75OEYAsWLQiDb4EXPkV0v0VUv0UsUeoN03wvkBIYueoV0VbqwvbHjVzUlXngsyZWSKEmRYBYZfkefxqOZwVZd1+Salk2ubBlgA2yADbABJsSyrFtqb9Rqhq2RdsHRfVN7lN17oHjQh+VyeR8EQcu53W5JGIYd8WQyIavVquWL4/hms9k8U+hX2m2jUwPPPc8jw+Gw/WeDAe+NdLS+75PZbOZEUbSgPz9ODUwcxzkIuPHrSolfOAwBh7hYYNu2OxHlAfOirxUYNsMbigBU4I4KDHM0nqVFs/Wx5m5l4KqqSFmWHR9vYa3qIZSBASDP816oBgxrtUcY4Ha7XctXFAUXGGu1Rxjgsixr+URRxNq+FOq9PDJG1ws8yrE10i4EWrA7mb0PKmsy1YCl15oS0AhwM2DldQM7Ho+ZaSKbFsrAo9GoAwEAPODpdNrxQ85rA4bZgAWRJAmzjbO0dFLTlxIA7Lrun8oaRBhrm4OcdfgRAZx9+IEbjvNPdOuVau6lteb9IUodwF9QEdI0bTlZFaJZWLsvgQD7qaPTzam9H9jp4IY+ye5tme/DBtgAG2ADbID/NfCPAAMAK4OPaVnFsMQAAAAASUVORK5CYII=);
+}
+
+.nPlayer_icon_play{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAqCAYAAADI3bkcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAnFJREFUeNrsmM+LUlEUx8/zJ2o4uAgSMTdBEChiEK5c9Be4MlDQIKFN6yAIgmjRqk2toqhN0NAuWs1sahu0UHBMTVvIrJSniZi/xtf3yBuIqNF3n89p4B74IPf94H753nPuuU9F0zQ6S2GjMxZSsBQsBUvBUjCRoihZ8AHcAnZAZjAU3OmMgHCBfjKZ1CKRCF/4Cm6Ycc3I/IrR1gxHdpxOZz+dTi/HnU6Hms0mtdvtLxjeA/sigi3PYZfLtSQUClEqlWKuBoPBPdz6CK5ZlcNCDkNoP5fL/fV+o9GgWq3Gzr/XHT/YpMPCgguFwonPVSoVqlar1Ov1XmP4EHw/1ZSw2WwnEo1GKZPJEIrzpl6YT8H5U9uH163qWCxGxWLRlUgk7uC1FngEdraew/l83vBkk8mEyuUylUolFcPH4Bn4uZUczmazwss6HA6X+Y08P9Tz+yV0HFkmmPdhzk+zgYKker1O3xAY3oeW3VXvOEQn4+U1G16vl+LxOO/ll1qt1luYcR2ib/+3go/D7/cvxSMuW3GW4ArXLOAVuLBqfmGHHQ6HKVcXi8WxiGVHxO/BWvMKHi/J4/EICZ3P5zSbzVjwJwzvgs9GCl/YJp/PZ+j56XRKo9GIxuOx8KnOlMPrCubiHAwGTA3DB2DXTCoJO+x2u1c6qqoqc6gL5UPQkdkdRdhhu93+zxztdrt8vFT1Lvac2++mtkCHmSr/c3vkrw8wxPCJzo9NH+CFBLM4XvLfWyxcnepu8vKrln02CzSOc0gJLRwOa4FAQMO5gi++ABe3ocGwYF30G707vQNXtmmaIv/QloKlYClYCpaCjcQvAQYAwc1EEcD9f00AAAAASUVORK5CYII=);
+}
+
+.nPlayer_icon_sound{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAqCAYAAADI3bkcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA8hJREFUeNrsmF1IU2EYx999ON2cTqeTiSgYyoY4FSaTXRXBQhACr4SulGBRIIFRBEGQGF5004U3RaEUXXQryqAgEkL8YIQEfoAaJuHHcDoZ5Nc8/Z/xKsftHHPuODDOCw/POc/79TvPed7nfc/RCILALlPRsktWVGAVWAVWgTMIrNFozJAeyBLpiwDWKwjrghpyOBwVhYWFbGxsrOqUtu1QDZBhbFyfMw7MYb96PB5rdXU129jYIHOlTNubdru932azsbW1tfu4HwB0R8aAMWEZVMDr9VqdTmfcZrVaScl52JCVlcVqamriEgwG2zHGNKBfXHgMYyId1IfGxsay2tpaptfr45Kbm8uys7OtqLdKdBtcXl4eCQQCbHFxkdXV1ZHtqUxbxRddF0Cvut1uptVqTwhBo5SJHu4x5BWFCrx5bXt72zk5Odk3MzPDXC6XGfb2CwXG5PTKezAZoxNfouTk5FAzm6jL3fr6ej/0J/Im2sxBOgE8aDKZqL5NkRjG4M1QrRJVnqamJgN58vDwMKkSIREPZ5Hp3tTUVBfi/Prs7Gwv7u9we+f4+HgLtJs/SDjdRdcAL/rz8vJOGIuLi+OL6+DgQLITBz72MECGKY3xsGiDvgdbDPIL119KS0t9KysrlG1G0s4S5MHKyuQstb+/L9snFovJVT03m83+aDTqxvUEt32DQwjYoQgwTb67u5tqjJMyJtq5R6dx6RABz+3s7CTG/PmB6bWnCszj2iBT/TMBLsyBLYoAz8/Px+UcRS4ukh5kfX1duZ3uKLem6mFIVKaaFkREdE+bDIVLRBFg2r34qj9zoVcsle4AVoHxqhBm0yKzQ6fTUeiFFAGmjYDH2HGhZG80GmX7UAaBSHnsCQebENm8/A3OKQE8gImTjoCRSKQLXrlFR0mpgq2XiV87POuDeoj2vs3NzT7Kwdxuh/Lt7e3R/Y+0gTHwKtSqxKt9FA6HWwoKCix8G5YqYg+/QdsKwNJY3SL7s5KSEh0WXfBfu1xaZwkM/hvqAQAYxV+i8I1DHJNvt7a23kPfQN8QxTKkt6ioyM//Pn08U35P91cVJh3CYbwFXjphp1MYFp0J4/+ROJIGcCb2weMsPz+fLSwsUDa5Qg+SiS+OjlAoNIrJqo7imae0SCIsL604MPnoi0OUf7vPAnucAdIV/nWxZLFYhPLycgGfQGT8LtO2FSlSwNlBMBgMZOhPaS4lgDkIHdZHj2Bw/e6UtrchLyHNqc6jUfp3K2KUzs50vp3A2K+V/szXqP+HVWAVWAVWgVXg/xr4rwADACd+VCBM4tePAAAAAElFTkSuQmCC);
+}
+
+.nPlayer_icon_mute{
+    background-image:url(data:image/png;base64,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);
+}
+
+.nPlayer_icon_loopAll{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAqCAYAAADI3bkcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABJVJREFUeNrsWF1IXEcUHnd1df1bWa2urgrKqhgFF4WVloIaiLRYElLoS59aAoVAH6RQaF4C7UtCAqUlpdDSh1JfQ8HSkIdApFBZlBT8wx8SEGsVcfEnsLq6uprvG2YuG7vqXu+1VNiB41zn7nznu2fOOfecm3V4eCgu0nCICzYyhDOELzrhbKsAWVlZqZYDkBhk6bT9ZrOUHRZ2QfogP0D+IYeCgoLnmD9N84FdkA7Im+duYSj5CNNtn89XV1VVJTALt9st5ubmxNTUVKotHZBLyeJwOAIHBwdhXL93boRBtBbTYH19fTAQCIjS0tLX7judzpSn7/V6RXFxsfB4PFISiYQYHh5+SrJwjdi5EAbZLky/tre3e1tbW/91f2tr6zjCL3t7ez0ul8vw3YGBgQQuv0qXrGnCIBvC9Linp8cN6xrrOFIxOzsrZWNj428sRSB/HdmeyM7OFjk5OcYCcJxDQ0ODwH0XpMO2ElZu8Ht3d7e7oaHBWB8fHxcjIyNxXP6oZPIYiCgezJtsfYXjAenHwH8LpKfttPD3nZ2dbzQ1NRkL4XBYTExM0JIfQOZP2R/nSayursoTqayslIuNjY0iHo974Mu/gHQnSCcsEwbQOzU1NX1tbW1G3hwdHSXZpyq60/HB2MzMDE+ERx8PBoNdoVBI3mhpaRHr6+sduH9DnZLlPPxlc3OzJEtZWFgQY2NjL7D+fppkpYVBlg/YC7nG/cTRmMTH+NzyiwPWvVRSUhKqrq6WaYgyPS1drR+KXppwqYfqNKLMGNxPHI0JHaKioiIAfW9btXCf3+8X+/v7UiKRiFhcXJwE2UcmM+LdI6fxiDjE09ggzPXLVgkHmeT39vakzM/Pa2vZMR4ST2MXFRUJ9Qa0FHR1TPaIZPkPgkOckLrMjkniaWz1UqmzSriQQaFBYzF5qis2EV4hnsZmusNwn1renSQYz/izI3Il6b6VcSUF9rOT+KRj4RXWvLruVRtrbbJwbQrsiNWgm2QNkJubK0XVAtdtInydeBqbejDGrPrwn/yTl5dnWAE+dxlW8eN6yQJZP1NYfn6+YeFoNGros2LhJ0g567QAwdFNsKZlYNyzaN17xCEecWkQ6qE+S4RhRYbwt7u7u7KboJSXl7MA/xCWuXlGsje5nzgac2dnh+vfKX2Wa4mvUecuMbkzV1LKysq4/iDd3i1p8PcPuF9jEZf4WL9vSxOKp6Zz9W9ubhotEI8RpaET7RFJD572hlL3B/l77uN+XRsr3H6l5+TaxkwuhQvcQV/2BRvO5LG2tibfgHCbP5QPrqhoD0J8zLeIgS72dEf7v+XlZe69Cx630uJgNvmD9E+orG5Que7P9Nje3pY9Hasv+iQDiVbUgZU86AZ8UFj3Z3D4OG39Z3lbgfRnjHIEjbOwsND0fqYvdB7sLG5B/31Tus/6elUfPr6BFUO0INPeMV+BjPzNTMMTgPVH6bPsskyfsNV6ACSvYvpE+anL4XBINyB5YtM9WNSAbFz5N1ug3876qcoOwvrSrYoZn8oIblWwT6sgfJKqnfrPCWc+t2YIZwhnCP+/xisBBgBMUUpJwCZNPwAAAABJRU5ErkJggg==);
+    background-size:10%;
+}
+
+#nPlayer_timeOutLine, #nPlayer_soundOutLine{
+    border-radius:4px;
+    background-color:#FFFFFF;
+    box-shadow:0 0 10px #999999;
+    cursor:pointer;
+}
+
+#nPlayer_timeInLine, #nPlayer_soundInLine{
+    border-radius:4px;
+    background-color:#666666;
+}
+
+#nPlayer_soundBar, #nPlayer_soundBarOver, #nPlayer_timeBar, #nPlayer_timeBarOver{
+    background-color:#666666;
+    position:absolute;
+    cursor:pointer;
+    box-shadow:0 0 10px #FFFFFF;
+    background: -webkit-linear-gradient(top, #999999, #444444);
+    background: -moz-linear-gradient(top, #999999, #444444);
+}
+
+#nPlayer_soundControl{
+    position:absolute;
+    padding:6px;
+    background-color:#eeeeee;
+    z-index:20;
+    border-radius:10px;
+    right:80px;
+    top:105px;
+    display:none;
+    box-shadow:0 0 10px #666666;
+}
+
+#nPlayer_soundOutLine{
+    width:8px;
+    height:100px;
+}
+
+#nPlayer_soundInLine{
+    width:100%;
+    height:100%;
+    background: -webkit-linear-gradient(left, #999999, #444444);
+}
+
+#nPlayer_soundBar, #nPlayer_soundBarOver{
+    height:15px;
+    width:15px;
+    top:96px;
+    left:3px;
+    border-radius:15px;
+}
+
+#nPlayer_timeControl{
+    position:absolute;
+    top:40px;
+    left:140px;
+    width:65%;
+}
+
+#nPlayer_timeOutLine{
+    height:8px;
+    width:100%;
+}
+
+#nPlayer_timeInLine{
+    height:100%;
+    width:0px;
+    background: -webkit-linear-gradient(top, #999999, #444444);
+    background: -moz-linear-gradient(top, #999999, #444444);
+}
+
+#nPlayer_timeBar, #nPlayer_timeBarOver{
+    height:13px;
+    width:32px;
+    top:-2px;
+    left:-18px;
+    border-radius:3px;
+}
+
+#nPlayer_timeBarOver{
+    opacity:0.8;
+}
+
+#nPlayer_cover,#nPlayer_info{
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    position:absolute;
+    display:none;
+    z-index:20;
+}
+
+#nPlayer_cover{
+    opacity:0.8;
+    background:#111111;
+}
+
+#nPlayer_info{
+    text-align:left;
+    color:white;
+    padding:50px;
+    font-size:26px;
+}
+
+#nPlayer_info a{
+    color:#D4EEF6;
+}
+
+#nPlayer_info b{
+    text-shadow:0px 0px 6px #FAD00B;
+}
+
+#nPlayer_info i{
+    text-shadow:0px 0px 6px #EA5448;
+}
+
+#nPlayer_infoClose{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:30px;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+}
+
+#nPlayer_fileChoser,#nPlayer_backChoser,#nPlayer_manu div{
+    position:absolute;
+    cursor:pointer;
+    height:30px;
+    width:60px;
+    left:80%;
+    overflow:hidden;
+}
+
+#nPlayer_fileChoser,#nPlayer_backChoser{
+    display:block;
+    opacity:0;
+    z-index:10;
+}
+
+#nPlayer_manu div{
+    background: -webkit-linear-gradient(top, #FFFFFF, #F1F1F1 50%, #E1E1E1 50%, #F3F3F3);
+    background: -moz-linear-gradient(top, #FFFFFF, #F1F1F1 50%, #E1E1E1 50%, #F3F3F3);
+    border-top:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC;
+    border-right:1px solid #CCCCCC;
+    border-radius:0 10px 10px 0;
+    line-height:30px;
+    font-weight:bold;
+    box-shadow:0 0 10px #666666;
+    font-size:16px;
+    text-shadow:2px 2px 2px #AAAAAA;
+}
+
+#nPlayer_manuFile, #nPlayer_fileChoser{
+    top:160px;
+}
+
+#nPlayer_manuBack, #nPlayer_backChoser{
+    top:210px;
+}
+
+#nPlayer_manuReset{
+    top:260px;
+}
+#nPlayer_manuAbout{
+    top:310px;
+}
