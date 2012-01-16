@@ -1,88 +1,99 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-  <meta charset='utf-8'>
-
-  <title>zation/nplayer @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #2e8620;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #d179df; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #d179df; }
-    h3 { text-align: center; color: #d179df; }
-    a { color: #d179df; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+    <meta charset="utf-8">
+    <title>HTML5 Player</title>
+    <meta name="description" content="HTML5 Music Player">
+    <meta name="author" content="Zation">
+    <link rel="stylesheet" href="global.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="NPlayer.js" type="text/javascript"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var nPlayer = new NPlayer();
+        }, false);
+    </script>
 </head>
 
 <body>
-  <a href="https://github.com/zation/nplayer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div id="topManu">
+    <span id="logo">NPlayer <span></span><span>Zation</span></span>
 
-  <div id="container">
+    <div id="home"><a href="http://zation.github.com/">Home</a></div>
+    <div><a target="_blank" href="https://github.com/zation/nplayer/">Source Code</a></div>
+</div>
 
-    <div class="download">
-      <a href="https://github.com/zation/nplayer/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/zation/nplayer/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+<div id="nPlayer_playBox" class="nPlayer_playBox">
+    <div class="hide">
+        <audio id="nPlayer_player"></audio>
     </div>
 
-    <h1><a href="https://github.com/zation/nplayer">nplayer</a>
-      <span class="small">by <a href="https://github.com/zation">zation</a></span></h1>
-
-    <div class="description">
-      
+    <div class="nPlayer_playControlBack">
+    </div>
+    <div class="nPlayer_playControl">
+        <div class="nPlayer_play">
+            <span class="nPlayer_icon_play" id="nPlayer_play"></span>
+        </div>
+        <div class="nPlayer_sound">
+            <span class="nPlayer_icon_sound" id="nPlayer_sound"></span>
+        </div>
+    </div>
+    <div id="nPlayer_soundControl">
+        <div id="nPlayer_soundOutLine">
+            <div id="nPlayer_soundInLine"></div>
+        </div>
+        <div id="nPlayer_soundBar"></div>
+    </div>
+    <div id="nPlayer_timeNum">
+        <span id="nPlayer_timeNumCur">0</span>
+        /
+        <span id="nPlayer_timeNumMax">0</span>
+    </div>
+    <div class="nPlayer_modControl">
+        <div class="nPlayer_normal">
+            <span id="nPlayer_normal" title="普通模式">Norm</span>
+        </div>
+        <div class="nPlayer_loopOne">
+            <span id="nPlayer_loopOne" title="单曲循环">1</span>
+        </div>
+        <div class="nPlayer_loopAll">
+            <span class="nPlayer_icon_loopAll" title="所有循环" id="nPlayer_loopAll"></span>
+        </div>
     </div>
 
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Zation (zation1@gmail.com)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Zation (zation1@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/zation/nplayer/zipball/master">zip</a> or
-      <a href="https://github.com/zation/nplayer/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/zation/nplayer</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/zation/nplayer">zation/nplayer</a>
+    <div id="nPlayer_timeControl">
+        <div id="nPlayer_timeOutLine">
+            <div id="nPlayer_timeInLine"></div>
+        </div>
+        <div id="nPlayer_timeBar"></div>
     </div>
 
-  </div>
+    <div id="nPlayer_list">
+        <div class="nPlayer_songListBack"></div>
+        <ul id="nPlayer_playList"></ul>
+    </div>
 
+    <div id="nPlayer_cover"></div>
+    <div id="nPlayer_info">
+        <div id="nPlayer_infoClose">X</div>
+        本音乐播放器基于Javascript与HTML5。<br/>
+        您可以通过<i>拖拽</i> 的方式将MP3文件放到网页中播放。<br/>
+        建议使用<b>Chrome</b>浏览器来体验本播放器。<br/>
+        本播放器所有代码开源，源代码请访问<a target="_blank" href="http://code.google.com/p/zation/">这里</a>.<br/>
+        有任何问题请联系<a href="mailto:zation1@gmail.com">我</a>.<br/>
+    </div>
+
+    <input type="file" title="添加音乐到播放列表" multiple="multiple" id="nPlayer_fileChoser"/>
+
+    <input type="file" title="设置背景图片" id="nPlayer_backChoser"/>
+
+    <div id="nPlayer_manu">
+        <div id="nPlayer_manuFile">添加</div>
+        <div id="nPlayer_manuBack">背景</div>
+        <div id="nPlayer_manuReset">重置</div>
+        <div id="nPlayer_manuAbout">关于</div>
+    </div>
+</div>
 </body>
 </html>
